@@ -1,0 +1,19 @@
+[rlbot]
+launcher = "steam"
+# We'll run the bot ourself so we don't have restart the match
+# `python src/bot.py` in our case
+auto_start_bots = false
+
+[match]
+# There can only be one rlbot-controlled car in a match
+# unless you feed the bot it's spawn id
+# by setting the `BOT_SPAWN_ID` environment variable
+num_cars = 1
+enable_rendering = true
+
+[mutators]
+match_length = "Unlimited"
+
+[[cars]]
+config = "src/bot.toml"
+team = 0

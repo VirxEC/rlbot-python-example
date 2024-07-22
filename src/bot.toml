@@ -1,0 +1,33 @@
+[settings]
+# The name that will be displayed in game
+name = "PythonExampleBot"
+# Path to loadout config from runner
+looks_config = "looks.toml"
+# (OPTIONAL) - what you want the working directory set to
+# This is relative to the location of this file
+location = ""
+# The command RLBot will call to start your bot on Windows
+# ex: "bot.exe" for compiled bots, or "python bot.py" if you don't want to freeze your python bot
+run_command = "..\\venv\\Scripts\\python atba.py"
+# The command RLBot will call to start your bot on linux
+# If this isn't set, RLBot may attempt to run the Windows command under Wine
+run_command_linux = "../venv/bin/python atba.py"
+
+# These values are optional but useful metadata for helper programs
+[details]
+# Short description of the bot
+description = """This is a multi-line description
+of the official python example bot
+"""
+# Fun fact about the bot
+fun_fact = "Made possible by RLBot v5"
+# Link to github repository
+github = "https://github.com/RLBot/core"
+# Name of the bot's creator/developer
+developer = "The RLBot community"
+# Programming language
+language = "Python"
+# ALL POSSIBLE TAGS: 1v1, teamplay, goalie, hoops, dropshot, snow-day, spike-rush, heatseaker, memebot
+# NOTE: Only add the goalie tag if your bot only plays as a goalie; this directly contrasts with the teamplay tag!
+# NOTE: Only add a tag for a special game mode if you bot properly supports it
+tags = []
