@@ -68,5 +68,5 @@ team = 0
 
 [[cars]]
 config = "src/bot.toml"
-team = 0
+team = 1
 

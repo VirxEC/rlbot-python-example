@@ -15,7 +15,7 @@ class Vec3(Vector3):
     When in doubt visit the wiki: https://github.com/RLBot/RLBot/wiki/Useful-Game-Values
     """
 
-    def __init__(self, x: float | Vector3 | "Vec3" = 0, y: float = 0, z: float = 0):
+    def __new__(cls, x: "float | Vec3 | Vector3" = 0, y: float = 0, z: float = 0) -> "Vec3":
         """
         Create a new Vec3. The x component can alternatively be another vector with an x, y, and z component, in which
         case the created vector is a copy of the given vector and the y and z parameter is ignored. Examples:
@@ -25,14 +25,14 @@ class Vec3(Vector3):
         b = Vec3(a)
 
         """
-
         match x:
             case Vector3(v_x, y, z) | Vec3(v_x, y, z):
-                super().__init__(v_x, y, z)
+                return super().__new__(cls, v_x, y, z)
             case _:
-                self.x = x
-                self.y = y
-                self.z = z
+                return super().__new__(cls, x, y, z)
+            
+    def __init__(self, x: "float | Vec3 | Vector3" = 0, y: float = 0, z: float = 0):
+        ...
 
     def __getitem__(self, item: int):
         return (self.x, self.y, self.z)[item]

@@ -110,3 +110,6 @@ ENV/
 # VSCode
 .vscode/
 *.code-workspace
+
+# RLBot
+RLBotServer*
