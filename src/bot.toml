@@ -16,13 +16,14 @@ run_command_linux = "../venv/bin/python bot.py"
 # These values are optional but useful metadata for helper programs
 [details]
 # Short description of the bot
-description = """This is a multi-line description
+description = """
+This is a multi-line description
 of the official python example bot
 """
 # Fun fact about the bot
 fun_fact = "Made possible by RLBot v5"
 # Link to github repository
-github = "https://github.com/RLBot/core"
+source_link = "https://github.com/RLBot/core"
 # Name of the bot's creator/developer
 developer = "The RLBot community"
 # Programming language
