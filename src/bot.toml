@@ -2,9 +2,11 @@
 # The name that will be displayed in game
 name = "PyExampleBot"
 # Path to loadout config from runner
-looks_config = "looks.toml"
+loadout_config = "loadout.toml"
 # (OPTIONAL) - what you want the working directory set to
 # This is relative to the location of this file
+# instead of setting to an empty string,
+# this value can be removed from the file
 location = ""
 # The command RLBot will call to start your bot on Windows
 # ex: "bot.exe" for compiled bots, or "python bot.py" if you don't want to freeze your python bot

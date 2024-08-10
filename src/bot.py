@@ -1,6 +1,5 @@
-from rlbot.flat import ControllerState, GameTickPacket
+from rlbot.flat import BallAnchor, ControllerState, GameTickPacket
 from rlbot.managers import Bot
-from rlbot_flatbuffers import BallAnchor
 
 from util.ball_prediction_analysis import find_slice_at_time
 from util.boost_pad_tracker import BoostPadTracker
