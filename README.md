@@ -6,7 +6,7 @@ Example of a Python bot using the RLBot framework
 
 1. Install Python 3.10 or later
 1. Create a Python virtual environment
-   - `python -m venv venv`
+   - `python3 -m venv venv`
 1. Activate the virtual environment
    - Windows: `.\venv\Scripts\activate`
    - Linux: `source venv/bin/activate`
@@ -21,4 +21,4 @@ Example of a Python bot using the RLBot framework
 ## Changing the bot
 
 - Bot behavior is controlled by `src/bot.py`
-- Bot appearance is controlled by `src/looks.toml`
+- Bot appearance is controlled by `src/loadout.toml`
