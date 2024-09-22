@@ -37,7 +37,7 @@ class BoostPadTracker:
         ]
 
     def update_boost_status(self, packet: GameTickPacket):
-        for i, packet_pad in enumerate(packet.boost_pad_states):
+        for i, packet_pad in enumerate(packet.boost_pads):
             our_pad = self.boost_pads[i]
             our_pad.is_active = packet_pad.is_active
             our_pad.timer = packet_pad.timer
