@@ -7,7 +7,7 @@ auto_start_bots = false
 [match]
 # There can only be one rlbot-controlled car in a match
 # unless you feed the bot it's spawn id
-# by setting the `BOT_SPAWN_ID` environment variable
+# by setting the `RLBOT_SPAWN_IDS` environment variable
 num_cars = 1
 enable_rendering = true
 
