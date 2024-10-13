@@ -1,4 +1,4 @@
-from rlbot.flat import GameTickPacket, PlayerInfo
+from rlbot.flat import GamePacket, PlayerInfo
 
 from util.vec import Vec3
 
@@ -17,7 +17,7 @@ class SpikeWatcher:
         self.spike_moment = 0
         self.carry_duration = 0
 
-    def read_packet(self, packet: GameTickPacket):
+    def read_packet(self, packet: GamePacket):
         ball_location = Vec3(packet.balls[0].physics.location)
         closest_candidate: PlayerInfo | None = None
         closest_distance = 999999

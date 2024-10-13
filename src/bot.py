@@ -1,4 +1,4 @@
-from rlbot.flat import BallAnchor, ControllerState, GameTickPacket
+from rlbot.flat import BallAnchor, ControllerState, GamePacket
 from rlbot.managers import Bot
 
 from util.ball_prediction_analysis import find_slice_at_time
@@ -12,11 +12,11 @@ class MyBot(Bot):
     active_sequence: Sequence | None = None
     boost_pad_tracker = BoostPadTracker()
 
-    def initialize_agent(self):
+    def initialize(self):
         # Set up information about the boost pads now that the game is active and the info is available
         self.boost_pad_tracker.initialize_boosts(self.field_info)
 
-    def get_output(self, packet: GameTickPacket) -> ControllerState:
+    def get_output(self, packet: GamePacket) -> ControllerState:
         """
         This function will be called by the framework many times per second. This is where you can
         see the motion of the ball, etc. and return controls to drive your car.
@@ -89,7 +89,7 @@ class MyBot(Bot):
 
         return controls
 
-    def begin_front_flip(self, packet: GameTickPacket):
+    def begin_front_flip(self, packet: GamePacket):
         # Send some quickchat just for fun
         # There won't be any content of the message for other bots,
         # but "I got it!" will be display for a human to see!

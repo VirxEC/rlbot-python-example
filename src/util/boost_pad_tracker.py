@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from rlbot.flat import FieldInfo, GameTickPacket
+from rlbot.flat import FieldInfo, GamePacket
 
 from util.vec import Vec3
 
@@ -36,7 +36,7 @@ class BoostPadTracker:
             bp for bp in self.boost_pads if bp.is_full_boost
         ]
 
-    def update_boost_status(self, packet: GameTickPacket):
+    def update_boost_status(self, packet: GamePacket):
         for i, packet_pad in enumerate(packet.boost_pads):
             our_pad = self.boost_pads[i]
             our_pad.is_active = packet_pad.is_active

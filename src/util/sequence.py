@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from rlbot.flat import GameTickPacket, ControllerState
+from rlbot.flat import GamePacket, ControllerState
 
 
 @dataclass
@@ -10,7 +10,7 @@ class StepResult:
 
 
 class Step:
-    def tick(self, packet: GameTickPacket) -> StepResult:
+    def tick(self, packet: GamePacket) -> StepResult:
         """
         Return appropriate controls for this step in the sequence. If the step is over, you should
         set done to True in the result, and we'll move on to the next step during the next frame.
@@ -31,7 +31,7 @@ class ControlStep(Step):
         self.controls = controls
         self.start_time: float | None = None
 
-    def tick(self, packet: GameTickPacket) -> StepResult:
+    def tick(self, packet: GamePacket) -> StepResult:
         if self.start_time is None:
             self.start_time = packet.game_info.seconds_elapsed
         elapsed_time = packet.game_info.seconds_elapsed - self.start_time
@@ -44,7 +44,7 @@ class Sequence:
         self.index = 0
         self.done = False
 
-    def tick(self, packet: GameTickPacket) -> ControllerState | None:
+    def tick(self, packet: GamePacket) -> ControllerState | None:
         while self.index < len(self.steps):
             step = self.steps[self.index]
             result = step.tick(packet)

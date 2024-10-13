@@ -18,7 +18,10 @@ if __name__ == "__main__":
 
     # wait for the match to end
     # or press ctrl+c to kill the match
-    while match_manager.packet is None or match_manager.packet.game_info.game_state_type != flat.GameStateType.Ended:
+    while (
+        match_manager.packet is None
+        or match_manager.packet.game_info.game_status != flat.GameStatus.Ended
+    ):
         sleep(0.1)
 
     # ensure RLBotServer shuts down
