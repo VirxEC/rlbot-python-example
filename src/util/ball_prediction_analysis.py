@@ -18,8 +18,8 @@ def find_slice_at_time(ball_prediction: BallPrediction, game_time: float):
     """
     start_time = ball_prediction.slices[0].game_seconds
     approx_index = int(
-        (game_time - start_time) * 60
-    )  # We know that there are 60 slices per second.
+        (game_time - start_time) * 120
+    )  # We know that there are 120 slices per second.
     if 0 <= approx_index < len(ball_prediction.slices):
         return ball_prediction.slices[approx_index]
     return None
