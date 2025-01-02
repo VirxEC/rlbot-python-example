@@ -7,8 +7,8 @@ GOAL_THRESHOLD = 5235
 
 # We will jump this number of frames when looking for a moment where the ball is inside the goal.
 # Big number for efficiency, but not so big that the ball could go in and then back out during that
-# time span. Unit is the number of frames in the ball prediction, and the prediction is at 60 frames per second.
-GOAL_SEARCH_INCREMENT = 20
+# time span. Unit is the number of frames in the ball prediction, and the prediction is at 120 frames per second.
+GOAL_SEARCH_INCREMENT = 40
 
 
 def find_slice_at_time(ball_prediction: BallPrediction, game_time: float):
@@ -34,7 +34,7 @@ def predict_future_goal(ball_prediction: BallPrediction):
         ball_prediction,
         0,
         lambda s: abs(s.physics.location.y) >= GOAL_THRESHOLD,
-        search_increment=20,
+        search_increment=GOAL_SEARCH_INCREMENT,
     )
 
 
