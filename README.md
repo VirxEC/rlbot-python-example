@@ -4,7 +4,7 @@ Example of a Python bot using the RLBot framework
 
 ## Quick Start
 
-1. Install Python 3.10 or later
+1. Install Python 3.11 or later
 1. Create a Python virtual environment
    - `python3 -m venv venv`
 1. Activate the virtual environment
