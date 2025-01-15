@@ -50,7 +50,7 @@ class MyBot(Bot):
             # We're far away from the ball, let's try to lead it a little bit
             # self.ball_prediction can predict bounces, etc
             ball_in_future = find_slice_at_time(
-                self.ball_prediction, packet.game_info.seconds_elapsed + 2
+                self.ball_prediction, packet.match_info.seconds_elapsed + 2
             )
 
             # ball_in_future might be None if we don't have an adequate ball prediction right now, like during
@@ -114,4 +114,6 @@ class MyBot(Bot):
 
 if __name__ == "__main__":
     # Connect to RLBot and run
-    MyBot().run()
+    # Having the agent id here allows for easier development,
+    # as otherwise the RLBOT_AGENT_ID environment variable must be set.
+    MyBot("rlbot_community/python_example").run()

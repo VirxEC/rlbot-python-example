@@ -33,8 +33,8 @@ class ControlStep(Step):
 
     def tick(self, packet: GamePacket) -> StepResult:
         if self.start_time is None:
-            self.start_time = packet.game_info.seconds_elapsed
-        elapsed_time = packet.game_info.seconds_elapsed - self.start_time
+            self.start_time = packet.match_info.seconds_elapsed
+        elapsed_time = packet.match_info.seconds_elapsed - self.start_time
         return StepResult(controls=self.controls, done=elapsed_time > self.duration)
 
 

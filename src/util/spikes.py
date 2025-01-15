@@ -31,8 +31,8 @@ class SpikeWatcher:
                     closest_distance = distance
 
         if closest_candidate != self.carrying_car and closest_candidate is not None:
-            self.spike_moment = packet.game_info.seconds_elapsed
+            self.spike_moment = packet.match_info.seconds_elapsed
 
         self.carrying_car = closest_candidate
         if self.carrying_car is not None:
-            self.carry_duration = packet.game_info.seconds_elapsed - self.spike_moment
+            self.carry_duration = packet.match_info.seconds_elapsed - self.spike_moment
