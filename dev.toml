@@ -5,7 +5,6 @@ launcher = "steam"
 auto_start_bots = false
 
 [match]
-num_cars = 1
 enable_rendering = true
 
 [mutators]
