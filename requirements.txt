@@ -1,2 +1,1 @@
-# rlbot==5.*
-rlbot @ git+https://github.com/VirxEC/python-interface@master
+rlbot>=2.0.0.beta
