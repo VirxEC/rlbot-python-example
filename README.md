@@ -26,7 +26,7 @@ Example of a Python bot using the RLBot framework
 ## Configuring for the v5 botpack
 
 1. `pip install pyinstaller`
-1. `pyinstaller --onefile src/bot.py --paths src`
+1. `pyinstaller --onefile src/bot.py --paths src` -
   This will create a file called `bot.spec`.
 1. Create `bob.toml` in the same directory as the spec file with the following content:
    ```toml
