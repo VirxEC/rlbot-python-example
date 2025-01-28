@@ -22,3 +22,27 @@ Example of a Python bot using the RLBot framework
 
 - Bot behavior is controlled by `src/bot.py`
 - Bot appearance is controlled by `src/loadout.toml`
+
+## Configuring for the v5 botpack
+
+1. `pip install pyinstaller`
+1. `pyinstaller --onefile src/bot.py --paths src`
+  This will create a file called `bot.spec`.
+1. Create `bob.toml` in the same directory as the spec file with the following content:
+   ```toml
+   [[config]]
+   project_name = "PythonExample"
+   bot_configs = ["src/bot.toml"]
+
+   [config.builder_config]
+   builder_type = "pyinstaller"
+   entry_file = "bot.spec"
+   ```
+
+   - `project_name` will be the name of your bot's folder in the botpack
+   - `bot_configs` is a list of bot configs that will be included in the botpack
+   - `builder_type` should always be `pyinstaller`
+   - `entry_file` is the name of the spec file
+
+1. Commit both `bot.spec` and `bob.toml` to your bot's repository.
+  Note that `bob.toml` CANNOT be renamed, but `bot.spec` can be anything as long as `entry_file` is also renamed to reflect the change.
