@@ -2,6 +2,8 @@
 
 Example of a Python bot using the RLBot framework
 
+Wiki: [VirxEC/python-interface/wiki](https://github.com/VirxEC/python-interface/wiki)
+
 ## Quick Start
 
 1. Install Python 3.11 or later
