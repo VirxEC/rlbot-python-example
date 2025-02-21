@@ -70,5 +70,5 @@ type = "human"
 team = 0
 
 [[cars]]
-config = "src/bot.toml"
+config_file = "src/bot.toml"
 team = 1
