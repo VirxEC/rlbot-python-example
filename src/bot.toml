@@ -27,8 +27,8 @@ of the official python example bot
 """
 # Fun fact about the bot
 fun_fact = "Made possible by RLBot v5"
-# Link to github repository
-source_link = "https://github.com/RLBot/core"
+# Link to your repository
+source_link = "https://github.com/VirxEC/rlbot-python-example"
 # Name of the bot's creator/developer
 developer = "The RLBot community"
 # Programming language
